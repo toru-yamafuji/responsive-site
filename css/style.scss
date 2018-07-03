@@ -1,0 +1,136 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
+@import url(https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
+//font-family
+$baseFontFamily:"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #bea300;
+$keyColor: #2e8b57;
+$fontColor: #4c4c4c;
+
+/* Base
+------------------------------------------------------------*/
+
+html{ font-size:62.5%};
+
+body{
+  color:$fontColor;
+  font-size:1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing:0.1rem;
+  background-color:$baseColor;
+}
+
+a{
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration:none;
+}
+
+/* Align
+------------------------------------------------------------*/
+
+.text-center{
+  text-align:center;
+}
+
+
+/* Layout
+------------------------------------------------------------*/
+.block-center{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.display-inline{
+  display:inline;
+}
+.h3-layout{
+  margin-bottom:8px;
+}
+
+/* Font
+------------------------------------------------------------*/
+.wf-nicomoji { font-family: "Nico Moji","Rounded Mplus 1c"; }
+.font-weight-500{ font-weight:500 };
+.uppercase{
+  text-transform:uppercase;
+.h3-typo{ font-weight:bold; };
+
+}
+
+
+
+/* Header
+------------------------------------------------------------*/
+header{
+  .header-image{
+    width: auto;
+    height: 500px;
+  }
+  
+  .profile {
+    padding:60px 0;
+    clear: both;
+  }
+  .site-title{
+    font-size:5.6rem;
+    line-height:normal;
+    
+    span{
+      display:block;
+      font-size:2.4rem;
+      color:$keyColor;
+    }
+  }
+  p{
+    font-size:1.6rem;
+  }
+}
+
+main{
+  .container{
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .plant-box{
+    float: left;
+    width: 32%;
+    margin-left:10px;
+    padding:15px 15px;
+    border-radius:10px;
+    border:solid 5px $keyColor;
+    box-sizing: border-box;
+    background-color:$baseColor;
+    
+  }
+  .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+  } 
+}
+
+@media (min-width:1025px){
+  /* Base
+  ------------------------------------------------------------*/
+  a{
+    &:hover{
+    text-decoration:under-line;
+    }
+  }
+  
+  /* Header
+  ------------------------------------------------------------*/
+  .button-contact{
+    &:hover, &:active{
+      background-color:$fontColor;
+      color:#FFFFFF;  //効かない！！！
+    }
+  }
+}
