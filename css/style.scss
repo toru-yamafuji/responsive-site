@@ -7,9 +7,10 @@ $baseFontFamily:"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino K
 
 // colors
 $baseColor: #fdfcf6;
-$subColor: #bea300;
+$subColor:#232323;
 $keyColor: #2e8b57;
 $fontColor: #4c4c4c;
+$accentColor:#7fff00;
 
 /* Base
 ------------------------------------------------------------*/
@@ -40,27 +41,16 @@ a{
 
 /* Layout
 ------------------------------------------------------------*/
-.block-center{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
+
 .display-inline{
   display:inline;
 }
-.h3-layout{
-  margin-bottom:8px;
-}
+
 
 /* Font
 ------------------------------------------------------------*/
 .wf-nicomoji { font-family: "Nico Moji","Rounded Mplus 1c"; }
 .font-weight-500{ font-weight:500 };
-.uppercase{
-  text-transform:uppercase;
-.h3-typo{ font-weight:bold; };
-
-}
 
 
 
@@ -68,69 +58,106 @@ a{
 ------------------------------------------------------------*/
 header{
   .header-image{
-    width: auto;
+    width: 100%;
     height: 500px;
+    object-fit: cover; 
+    object-position: 0 0; 
   }
   
-  .profile {
-    padding:60px 0;
-    clear: both;
-  }
   .site-title{
     font-size:5.6rem;
     line-height:normal;
-    
-    span{
-      display:block;
-      font-size:2.4rem;
-      color:$keyColor;
-    }
   }
-  p{
+  p.shop-name{
+    margin-top:50px;
     font-size:1.6rem;
+  }
+  
+  p.shop-description{
+    font-size:2.4rem;
+    color:$keyColor;
+    margin:15px;
   }
 }
 
+
 main{
   .container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
     max-width: 1000px;
     margin: auto;
-    padding-top: 10px;
+    padding-top: 30px;
     padding-bottom: 10px;
   }
+
   .plant-box{
-    float: left;
-    width: 32%;
-    margin-left:10px;
+    flex:1;
+    margin:0px 15px;
     padding:15px 15px;
     border-radius:10px;
     border:solid 5px $keyColor;
     box-sizing: border-box;
     background-color:$baseColor;
     
+    h3{
+      font-weight:bold;
+    }
+    
+    p{
+      margin-top:8px;
+    }
+  }
+  .plant-icon{
+    color:$accentColor;
   }
   .clearfix::after {
     content: '';
     display: block;
     clear: both;
-  } 
+  }
+}
+  
+footer{
+  .blog-box{
+    width:100%;
+    height:200px;
+    margin-top:50px;
+    padding-top:50px;
+    background-color:#2f2f2f;
+    
+    .blog-box-inner{
+      
+      h3{
+        margin-bottom:30px;
+        color:#FFF;
+      }
+      .button-readmore{
+        padding:3px 12px;
+        border-radius:5px;
+        box-shadow: 0px 0px 0px 5px $keyColor;
+        border:dashed 1px $keyColor;
+        background-color:$baseColor;
+        
+        &:hover{
+          border:dotted 1px $keyColor;
+          background-color:#FFF;
+        }
+      }
+    }
+  }
 }
 
-@media (min-width:1025px){
-  /* Base
-  ------------------------------------------------------------*/
-  a{
-    &:hover{
-    text-decoration:under-line;
-    }
+@media (max-width:768px){
+  main .container{
+    flex-direction:column;
   }
-  
-  /* Header
-  ------------------------------------------------------------*/
-  .button-contact{
-    &:hover, &:active{
-      background-color:$fontColor;
-      color:#FFFFFF;  //効かない！！！
-    }
+  main .plant-box{
+    margin:15px 15px;
+  }
+  header .header-image{
+    height: 250px;
   }
 }
+

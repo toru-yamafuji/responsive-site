@@ -31,16 +31,8 @@ a {
 
 /* Layout
 ------------------------------------------------------------*/
-.block-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
 .display-inline {
   display: inline; }
-
-.h3-layout {
-  margin-bottom: 8px; }
 
 /* Font
 ------------------------------------------------------------*/
@@ -50,58 +42,78 @@ a {
 .font-weight-500 {
   font-weight: 500; }
 
-.uppercase {
-  text-transform: uppercase; }
-  .uppercase .h3-typo {
-    font-weight: bold; }
-
 /* Header
 ------------------------------------------------------------*/
 header .header-image {
-  width: auto;
-  height: 500px; }
-header .profile {
-  padding: 60px 0;
-  clear: both; }
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0 0; }
 header .site-title {
   font-size: 5.6rem;
   line-height: normal; }
-  header .site-title span {
-    display: block;
-    font-size: 2.4rem;
-    color: #2e8b57; }
-header p {
+header p.shop-name {
+  margin-top: 50px;
   font-size: 1.6rem; }
+header p.shop-description {
+  font-size: 2.4rem;
+  color: #2e8b57;
+  margin: 15px; }
 
 main .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   max-width: 1000px;
   margin: auto;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 10px; }
 main .plant-box {
-  float: left;
-  width: 32%;
-  margin-left: 10px;
+  flex: 1;
+  margin: 0px 15px;
   padding: 15px 15px;
   border-radius: 10px;
   border: solid 5px #2e8b57;
   box-sizing: border-box;
   background-color: #fdfcf6; }
+  main .plant-box h3 {
+    font-weight: bold; }
+  main .plant-box p {
+    margin-top: 8px; }
+main .plant-icon {
+  color: #7fff00; }
 main .clearfix::after {
   content: '';
   display: block;
   clear: both; }
 
-@media (min-width: 1025px) {
-  /* Base
-  ------------------------------------------------------------*/
-  a:hover {
-    text-decoration: under-line; }
+footer .blog-box {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  padding-top: 50px;
+  background-color: #2f2f2f; }
+  footer .blog-box .blog-box-inner h3 {
+    margin-bottom: 30px;
+    color: #FFF; }
+  footer .blog-box .blog-box-inner .button-readmore {
+    padding: 3px 12px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 5px #2e8b57;
+    border: dashed 1px #2e8b57;
+    background-color: #fdfcf6; }
+    footer .blog-box .blog-box-inner .button-readmore:hover {
+      border: dotted 1px #2e8b57;
+      background-color: #FFF; }
 
-  /* Header
-  ------------------------------------------------------------*/
-  .button-contact:hover, .button-contact:active {
-    background-color: #4c4c4c;
-    color: #FFFFFF; } }
+@media (max-width: 768px) {
+  main .container {
+    flex-direction: column; }
+
+  main .plant-box {
+    margin: 15px 15px; }
+
+  header .header-image {
+    height: 250px; } }
 
 /*# sourceMappingURL=style.css.map */
